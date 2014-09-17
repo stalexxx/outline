@@ -15,17 +15,19 @@ public class RandomUtils {
     static int nextColorIndex = 0;
 
     static {
+        colors = new CssColor[6];
         List<CssColor> list = new ArrayList<>();
-        list.add(CssColor.make("blue"));
-        list.add(CssColor.make("green"));
-        list.add(CssColor.make("black"));
-        list.add(CssColor.make("pink"));
-        list.add(CssColor.make("brown"));
-        list.add(CssColor.make("yellow"));
-        colors = list.toArray(new CssColor[list.size()]);
+        colors[0]=(CssColor.make("blue"));
+        colors[1]=(CssColor.make("green"));
+        colors[2]=(CssColor.make("black"));
+        colors[3]=(CssColor.make("pink"));
+        colors[4]=(CssColor.make("brown"));
+        colors[5]=(CssColor.make("yellow"));
+        //colors = list.toArray(new CssColor[list.size()]);
     }
     public static FillStrokeStyle randColor() {
         return colors[nextColorIndex++ % colors.length];
+//        return CssColor.make("blue");
     }
 
     public static IntegerRect createRandomRect() {
